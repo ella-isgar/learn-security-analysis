@@ -18,7 +18,7 @@ Furthermore, static analysis tools are closely related to threat modeling becaus
 
 ## CodeQL Security Analyzer
 
-CodeQL is a static analysis tool developed by GitHub that uses a __query language__ to analyze code for security vulnerabilities and code quality issues. It operates by interpreting the code’s syntax and structure to identify patterns that could lead to vulnerabilities. By using CodeQL, security vulnerabilities can be detected early, enabling developers to fix issues before they impact the application in production. CodeQL comes with a rich set of pre-built queries specifically designed for various programming languages, including JavaScript and TypeScript. These built-in queries are designed to detect common vulnerabilities in web applications similar to the STRIDE threats discussed in the lecture on threat modeling.
+CodeQL is a static analysis tool developed by GitHub that uses a **query language** to analyze code for security vulnerabilities and code quality issues. It operates by interpreting the code’s syntax and structure to identify patterns that could lead to vulnerabilities. By using CodeQL, security vulnerabilities can be detected early, enabling developers to fix issues before they impact the application in production. CodeQL comes with a rich set of pre-built queries specifically designed for various programming languages, including JavaScript and TypeScript. These built-in queries are designed to detect common vulnerabilities in web applications similar to the STRIDE threats discussed in the lecture on threat modeling.
 
 CodeQL comes with a set of built-in queries but developers can extend them with additional queries to suit the security requirements of their projects. In our case, we will use the built-in set of queries.
 
@@ -30,25 +30,25 @@ CodeQL comes with a set of built-in queries but developers can extend them with 
 
 3. Verify the installation by running the following command:
 
-    `$ <extraction-root>/codeql/codelql resolve packs`
+   `$ <extraction-root>/codeql/codelql resolve packs`
 
-    If the installation was succesful, in the output for the above command you should be able to see the path to the ql packs for javascript. The location should be within the extracted CodeQL CLI bundle in the directory `<extraction-root>`. If the CodeQL CLI is unable to locate the qlpacks for the expected languages, check that you downloaded the CodeQL bundle and not a standalone copy of the CodeQL CLI.
+   If the installation was succesful, in the output for the above command you should be able to see the path to the ql packs for javascript. The location should be within the extracted CodeQL CLI bundle in the directory `<extraction-root>`. If the CodeQL CLI is unable to locate the qlpacks for the expected languages, check that you downloaded the CodeQL bundle and not a standalone copy of the CodeQL CLI.
 
-3. Prepare the code for analysis by running the following command:
+4. Prepare the code for analysis by running the following command:
 
-    `$ <extract-root>/codeql/codeql database create <database> --language=javascript-typescript`
+   `$ <extract-root>/codeql/codeql database create <database> --language=javascript-typescript`
 
-    `<database>` is the path to the directory of your choosing where you want the CodeQL database of your source code to be stored. Remember CodeQL first creates an intermediate representation of your source code before performing the analysis. This intermediate representation is called [semmle](https://en.wikipedia.org/wiki/Semmle).
+   `<database>` is the path to the directory of your choosing where you want the CodeQL database of your source code to be stored. Remember CodeQL first creates an intermediate representation of your source code before performing the analysis. This intermediate representation is called [semmle](https://en.wikipedia.org/wiki/Semmle).
 
-4. Analyze the code and generate report using the following command:
+5. Analyze the code and generate report using the following command:
 
-    `$ ~/codeql/codeql database analyze <path/to/codeql-database> --format="sarif-latest" --output <path/to/report/report.sarif>`
+   `$ ~/codeql/codeql database analyze <path/to/codeql-database> --format="sarif-latest" --output <path/to/report/report.sarif>`
 
-5. Analyze the report to see potential vulnerabilities in your code and take steps to fix them.
+6. Analyze the report to see potential vulnerabilities in your code and take steps to fix them.
 
-6. You can run the following script to obtain quick stats about the report:
+7. You can run the following script to obtain quick stats about the report:
 
-    `$ npx ts-node codeql-quick-stats.ts`
+   `$ npx ts-node codeql-quick-stats.ts`
 
 ## For You To Do
 
