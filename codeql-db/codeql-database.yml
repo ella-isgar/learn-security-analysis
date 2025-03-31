@@ -1,11 +1,11 @@
 ---
 sourceLocationPrefix: /Users/ella/CS5500/learn-security-analysis
-baselineLinesOfCode: 1225
+baselineLinesOfCode: 1227
 unicodeNewlines: true
 columnKind: utf16
 primaryLanguage: javascript
 creationMetadata:
-  sha: 38dc993edaf0c6a2e2eb20185e6e0dcc06701e0b
+  sha: b8da5c8c5d542ee9c26259baf63f2fc846b773f5
   cliVersion: 2.19.3
-  creationTime: 2025-03-31T17:20:19.578042Z
+  creationTime: 2025-03-31T17:23:39.286062Z
 finalised: true
